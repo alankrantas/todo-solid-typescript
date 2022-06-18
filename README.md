@@ -1,6 +1,6 @@
 # Todo-Solid-TypeScript
 
-This is the [Solid](https://www.solidjs.com/)/[TypeScript](https://www.typescriptlang.org/) version of the **TodoMatic** example modified from my [React](https://github.com/alankrantas/todo-react-typescript) version. Solid is very similar to React except it dosen't use virtual DOM and is fully reactive.
+This is the [Solid](https://www.solidjs.com/)/[TypeScript](https://www.typescriptlang.org/) version of the **TodoMatic** example modified from my [React](https://github.com/alankrantas/todo-react-typescript) version, create with ```degit``` and ```solidjs/templates/ts```. Solid is very similar to React except it dosen't use virtual DOM and is fully reactive.
 
 ## Using This Project
 
