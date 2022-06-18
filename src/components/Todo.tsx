@@ -1,5 +1,6 @@
 import type { Component, JSX } from 'solid-js';
-import { createSignal, Switch, Match } from "solid-js";
+import { createSignal } from "solid-js";
+import { Dynamic } from "solid-js/web";
 import { TodoItem } from "./data/entities";
 
 interface Props {
@@ -19,7 +20,7 @@ export const Todo: Component<Props> = (props) => {
         setEditing(false);
     }
 
-    const editingTemplate = (
+    const editingTemplate = () => (
         <form class="stack-small" onSubmit={handleSubmit}>
             <div class="form-group">
                 <label class="todo-label" for={props.task.taskId}>
@@ -50,7 +51,7 @@ export const Todo: Component<Props> = (props) => {
         </form>
     );
 
-    const viewTemplate = (
+    const viewTemplate = () => (
         <div class="stack-small">
             <div class="c-cb">
                 <input
@@ -80,14 +81,7 @@ export const Todo: Component<Props> = (props) => {
 
     return (
         <li class="todo">
-            <Switch>
-                <Match when={isEditing()}>
-                    {editingTemplate}
-                </Match>
-                <Match when={!isEditing()}>
-                    {viewTemplate}
-                </Match>
-            </Switch>
+            <Dynamic component={isEditing() ? editingTemplate : viewTemplate} />
         </li>
     );
 };
